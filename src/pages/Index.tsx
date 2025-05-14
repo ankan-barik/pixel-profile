@@ -629,7 +629,7 @@ const EnhancedLandingPage = () => {
               <div className="profile-image-container w-full h-full p-2 relative z-10">
                 {/* Profile image */}
                 <motion.img
-                  src="src/pages/WhatsApp Image 2025-04-02 at 00.47.15_a8fb2567.jpg"
+                  src="/assets/WhatsApp Image 2025-04-02 at 00.47.15_a8fb2567.jpg"
                   alt="Ankan Barik"
                   className="w-full h-full object-cover rounded-full"
                   whileHover={{ scale: 1.05 }}
@@ -812,7 +812,7 @@ const AboutSection = ({ handleDownloadCV }) => {
           >
             <div className="image-container relative">
               <div className="about-blob absolute w-full h-full bg-blue-50 rounded-full filter blur-3xl opacity-30 transform -translate-x-4 translate-y-4"></div>
-              <img src="src/pages/WhatsApp Image 2025-04-02 at 01.02.36_d2329f85.jpg" alt="Ankan Barik" className="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-lg" />
+              <img src="/assets/WhatsApp Image 2025-04-02 at 01.02.36_d2329f85.jpg" alt="Ankan Barik" className="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-lg" />
             </div>
           </motion.div>
 

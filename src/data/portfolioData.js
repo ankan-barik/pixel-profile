@@ -47,7 +47,7 @@ export const techStackData = [
 export const projects = [
   {
     title: "PrintFusion AI",
-    image: "src/pages/Screenshot 2025-04-07 011848.png",
+    image: "/assets/Screenshot 2025-04-07 011848.png",
     description: "A customized e-commerce platform for personalized T-Shirts and gifts, featuring an AI-powered 'Create Design' section for AI-generated designs, color customization, and downloads.",
     technologies: ["React", "JavaScript", "Tailwind CSS"],
     link: "https://print-fusion-ai.vercel.app/",
@@ -63,7 +63,7 @@ export const projects = [
   },
   {
     title: "Diamond Price Prediction",
-    image: "src/pages/Screenshot 2025-04-06 183744.png",
+    image: "/assets/Screenshot 2025-04-06 183744.png",
     description: "Implemented dynamic input forms for users to enter diamond attributes (carat, cut, color, clarity, width, length etc.), with real-time validation and responsiveness.",
     technologies: ["Python", "Flask", "Machine Learning", "JavaScript", "React.js", "Tailwind CSS"],
     link: "https://diamond-price-predictor-gold.vercel.app/",
@@ -80,7 +80,7 @@ export const projects = [
   },
   {
     title: "Cryptoscape Pulse Watch",
-    image: "src/pages/Screenshot 2025-05-08 210036.png",
+    image: "/assets/Screenshot 2025-05-08 210036.png",
     description: "Fetches live crypto prices (from an API like CoinGecko, CoinMarketCap, etc.) Displays updates in real-time or at intervals. Show charts, trends, and asset names.",
     technologies: ["React.js", "Tailwind CSS", "TypeScript", "Redux Toolkit", "JavaScript"],
     link: "https://cryptoscape-pulse-watch.vercel.app/",
@@ -96,7 +96,7 @@ export const projects = [
   },
   {
     title: "Weather Sphere",
-    image: "src/pages/Screenshot 2025-04-27 132016.png",
+    image: "/assets/Screenshot 2025-04-27 132016.png",
     description: "Displays live temperature, humidity, visibility, wind speed, sunrise/sunset timings for any searched location, and well-structured weather cards for easy navigation.",
     technologies: ["React.js", "Weather API", "Tailwind CSS", "JavaScript"],
     link: "https://weather-dashboard-iota-tan.vercel.app/",
@@ -113,7 +113,7 @@ export const projects = [
  
   {
     title: "ApolloCare Clone",
-    image: "src/pages/Screenshot 2025-05-08 000913.png",
+    image: "/assets/Screenshot 2025-05-08 000913.png",
     description: "This project is a functional clone of the Apollo 24/7 destination page for General Physicians, built using Next.js with Off-page SEO support, REST API integration, and filter-based doctor listing.",
     technologies: ["JavaScript", "Next.js", "CSS3", "REST APIs"],
     link: "https://apollo-care-clone-doctor-finder-page-nx6u.vercel.app/",
@@ -134,7 +134,7 @@ export const projects = [
   },
   {
     title: "Jungle Slither Game",
-    image: "src/pages/Screenshot 2025-04-02 161747.png",
+    image: "/assets/Screenshot 2025-04-02 161747.png",
     description: "Implemented optimized Game Mechanics including collision detection, responsive design, and high-score saving for an enhanced user experience.",
     technologies: ["JavaScript", "HTML5", "CSS3", ],
     link: "https://jungle-slither-game.vercel.app/",
