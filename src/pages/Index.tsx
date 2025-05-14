@@ -1083,7 +1083,7 @@ const SkillsSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Expertise across the full stack of web development and design
+          Expertise across the full stack of web development and design.
         </motion.p>
 
         {/* Skill Cards */}

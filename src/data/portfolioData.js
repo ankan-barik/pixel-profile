@@ -159,24 +159,24 @@ export const certificates = [
     title: "SBI College Youth Ideathon",
     issuer: "State Bank of India",
     date: "April 2025",
-    image: "src/pages/WhatsApp Image 2025-05-13 at 00.19.13_8217a7b5.jpg"
+    image: "/assets/WhatsApp Image 2025-05-13 at 00.19.13_8217a7b5.jpg"
   },
   {
     title: "Full Stack Development",
     issuer: "PW Skills",
     date: "May 2025",
-    image: "src/pages/Screenshot 2025-05-13 123000.png"
+    image: "/assets/Screenshot 2025-05-13 123000.png"
   },
   {
     title: "Backend Development",
     issuer: "PW Skills",
     date: "August 2024",
-    image: "src/pages/Screenshot 2025-05-13 122247.png"
+    image: "/assets/Screenshot 2025-05-13 122247.png"
   },
   {
     title: "Java",
     issuer: "Udemy",
     date: "August 2024",
-    image: "src/pages/Screenshot 2025-05-07 235645.png"
+    image: "/assets/Screenshot 2025-05-07 235645.png"
   }
 ];
