@@ -914,18 +914,119 @@ const SkillsSection = () => {
   ];
 
   // Updated technology objects to include their own icon components
-  const technologies = [
-    { name: "HTML5", level: 90, icon: <FileCode className="text-red-600" size={36} />, color: "bg-red-600" },
-    { name: "CSS3", level: 85, icon: <Code className="text-blue-600" size={36} />, color: "bg-blue-600" },
-    { name: "JavaScript", level: 80, icon: <FileText className="text-yellow-300" size={36} />, color: "bg-yellow-300" },
-    { name: "React.js", level: 75, icon: <LayoutGrid className="text-cyan-400" size={36} />, color: "bg-cyan-400" },
-    { name: "Node.js", level: 70, icon: <Book className="text-black" size={36} />, color: "bg-black" },
-    { name: "Tailwind CSS", level: 70, icon: <Coffee className="text-teal-700" size={36} />, color: "bg-teal-600" },
-    { name: "GitHub", level: 65, icon: <Github className="text-black" size={36} />, color: "bg-black" },
-    // For Vercel and Vite, we'll create custom icon components since they're not in lucide-react
-    { name: "Vercel", level: 60, icon: <VercelIcon />, color: "bg-black" },
-    { name: "Vite", level: 80, icon: <ViteIcon />, color: "bg-violet-900" },
-  ];
+const technologies = [
+  {
+    name: "HTML5",
+    level: 90,
+    icon: (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+        alt="HTML5"
+        className="w-10 h-10"
+      />
+    ),
+    color: "bg-red-600",
+  },
+  {
+    name: "CSS3",
+    level: 85,
+    icon: (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+        alt="CSS3"
+        className="w-10 h-10"
+      />
+    ),
+    color: "bg-blue-600",
+  },
+  {
+    name: "JavaScript",
+    level: 80,
+    icon: (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        alt="JavaScript"
+        className="w-10 h-10"
+      />
+    ),
+    color: "bg-yellow-300",
+  },
+  {
+    name: "React.js",
+    level: 75,
+    icon: (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        alt="React"
+       className="w-10 h-10"
+      />
+    ),
+    color: "bg-cyan-400",
+  },
+  {
+    name: "Node.js",
+    level: 70,
+    icon: (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+        alt="Node.js"
+        className="w-10 h-10"
+      />
+    ),
+    color: "bg-green-600",
+  },
+  {
+    name: "Tailwind CSS",
+    level: 70,
+    icon: (
+      <img
+        src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+        alt="Tailwind CSS"
+        className="w-10 h-10"
+      />
+    ),
+    color: "bg-teal-500",
+  },
+  {
+    name: "GitHub",
+    level: 65,
+    icon: (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+        alt="GitHub"
+      className="w-10 h-10"
+      />
+    ),
+    color: "bg-black",
+  },
+  {
+  name: "Vercel",
+  level: 60,
+  icon: (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+      alt="Vercel"
+      className="w-9 h-9 bg-white rounded"
+    />
+  ),
+  color: "bg-black",
+},
+
+  {
+    name: "Vite",
+    level: 80,
+    icon: (
+      <img
+        src="https://vitejs.dev/logo-with-shadow.png"
+        alt="Vite"
+        className="w-10 h-10"
+      />
+    ),
+    color: "bg-violet-500",
+  },
+];
+
+
 
   // Custom Vercel icon component
   function VercelIcon() {
