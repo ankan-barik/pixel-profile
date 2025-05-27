@@ -45,6 +45,31 @@ export const techStackData = [
 
 // Projects data
 export const projects = [
+    {
+    title: "Expensia",
+    image: "/assets/Screenshot 2025-05-27 152310.png",
+    description: "Built a full-stack personal finance tracker with secure JWT authentication and RESTful APIs to manage user-specific income/expense data, including user registration and login with persistent data in MongoDB.Integrated Recharts for live bar and pie charts to visualize category-wise and monthly spending trends.Deployed both frontend and backend on Vercel, with a mobile-first responsive UI, protected routes, and dynamic state management.",
+
+
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    link: "https://personl-finance-tracker-svpy.vercel.app/",
+    repoLink: "https://github.com/ankan-barik/personl-finance-tracker",
+    techCount: 5,
+    featureCount: 5,
+    features: [
+      
+"🛠️ Full-Stack Development",
+
+      "🔐 User Auth & Data Security",
+
+
+      "📊 Real-Time Charts & Insights",
+
+      "📱 Responsive & Mobile-First UI",
+      "🚀 Deployment & Environment Setup",
+
+    ]
+  },
   {
     title: "PrintFusion AI",
     image: "/assets/Screenshot 2025-04-07 011848.png",
@@ -111,27 +136,7 @@ export const projects = [
     ]
   },
  
-  {
-    title: "ApolloCare Clone",
-    image: "/assets/Screenshot 2025-05-08 000913.png",
-    description: "This project is a functional clone of the Apollo 24/7 destination page for General Physicians, built using Next.js with Off-page SEO support, REST API integration, and filter-based doctor listing.",
-    technologies: ["JavaScript", "Next.js", "CSS3", "REST APIs"],
-    link: "https://apollo-care-clone-doctor-finder-page-nx6u.vercel.app/",
-    repoLink: "https://github.com/ankan-barik/ApolloCare-Clone-Doctor-Finder-Page",
-    techCount: 4,
-    featureCount: 4,
-    features: [
-      "🧑‍⚕️ Filter-based doctor listing",
 
-      "🔗 REST API integration",
-
-
-      "⚙️ Built with Next.js",
-
-      "🔍 Off-page SEO support",
-
-    ]
-  },
   {
     title: "Jungle Slither Game",
     image: "/assets/Screenshot 2025-04-02 161747.png",

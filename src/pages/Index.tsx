@@ -1319,7 +1319,7 @@ const PortfolioSection = ({ openProjectDetails }) => {
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover object-center transition-all duration-300 hover:scale-110" />
                 </div>
                 <div className="project-info p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-orange-700 mb-2">{project.title}</h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-3">{project.description}</p>
                   <div className="project-actions flex justify-between items-center">
                     <a href={project.link} className="project-link text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors" target="_blank" rel="noopener noreferrer">
