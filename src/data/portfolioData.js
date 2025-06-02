@@ -52,8 +52,8 @@ export const projects = [
 
 
     technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-    link: "https://personl-finance-tracker-svpy.vercel.app/",
-    repoLink: "https://github.com/ankan-barik/personl-finance-tracker",
+    link: "https://grow-wealth-chi.vercel.app/",
+    repoLink: "https://github.com/ankan-barik/grow-wealth",
     techCount: 5,
     featureCount: 5,
     features: [
