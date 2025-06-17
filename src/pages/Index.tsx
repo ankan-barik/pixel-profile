@@ -825,7 +825,7 @@ const AboutSection = ({ handleDownloadCV }) => {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">I'm a <span className="text-orange-400">B.Tech Computer Science</span> student</h2>
             <p className="text-gray-700 text-lg mb-6">
               I'm currently studying at Kalinga Institute of Industrial Technology with a strong passion for web development.
-              Proficient in frontend technologies like HTML, CSS, JavaScript, and React.js.
+              Proficient in both frontend and backend technologies like React.js, Node.js, MongoDB, and Express.js.
               Experienced in creating responsive and innovative web solutions.
             </p>
 
