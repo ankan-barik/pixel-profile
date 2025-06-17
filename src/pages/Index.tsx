@@ -51,8 +51,8 @@ const Index = () => {
   const { toast } = useToast();
 
   const roles = [
-    "Frontend Engineer",
-    "Web Developer",
+    "Frontend Developer",
+    "Backend Developer",
     "UI/UX Designer",
 
   ];
@@ -473,7 +473,7 @@ const Navbar = ({ currentSection, handleNavigation, menuOpen, toggleMenu, scroll
 // Updated Landing Page Component with enhanced image card animations
 const EnhancedLandingPage = () => {
   // Sample data
-  const roles = ["Frontend Developer", "UI/UX Designer", "Web Developer"];
+  const roles = ["Frontend Developer", "Backend Developer","UI/UX Designer"];
   const roleColors = ["text-blue-600", "text-green-600", "text-pink-600"];
   const [roleIndex, setRoleIndex] = useState(0);
 
