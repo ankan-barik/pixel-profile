@@ -45,6 +45,35 @@ export const techStackData = [
 
 // Projects data
 export const projects = [
+   {
+    title: "Track Zen",
+    image: "/assets/Screenshot 2025-06-23 201634.png",
+    description: "An advanced, full-stack issue tracking platform inspired by Jira and Linear, built using the MERN stack. This project empowers teams to manage software bugs, feature requests, and development tasks using Kanban boards, role-based collaboration, and real-time ticket updates. It reflects real-world SaaS and enterprise dashboard use cases with JWT-based auth, project and team management, and responsive UI.",
+
+
+
+
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    link: "https://bug-tracker-pearl.vercel.app/",
+    repoLink: "https://github.com/ankan-barik/bug-tracker",
+    techCount: 5,
+    featureCount: 5,
+    features: [
+      
+
+
+      "🔐 Secure Authentication",
+
+
+      "📁 Project & Team Management",
+
+      
+      "🧩 Kanban Board with Drag & Drop",
+      "🎯 Ticket Filtering & Search",
+      "📱 Responsive & Mobile-First UI",
+
+    ]
+  },
     {
     title: "Expensia",
     image: "/assets/Screenshot 2025-05-27 152310.png",
