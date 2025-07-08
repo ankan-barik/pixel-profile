@@ -53,10 +53,10 @@ export const projects = [
 
 
 
-    technologies: ["React.js", "Tailwind CSS", "React DnD","Axios ","React Router","Node.js + Express.js ", "MongoDB + Mongoose","JWT + bcrypt"],
+    technologies: ["React.js", "Tailwind CSS","Node.js + Express.js ", "MongoDB + Mongoose","JWT + bcrypt"],
     link: "https://document-sign-app.vercel.app/",
     repoLink: "https://github.com/ankan-barik/document-sign-app",
-    techCount: 8,
+    techCount: 5,
     featureCount: 5,
     features: [
       
