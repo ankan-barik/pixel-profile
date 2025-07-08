@@ -45,6 +45,35 @@ export const techStackData = [
 
 // Projects data
 export const projects = [
+     {
+    title: "SignFlow",
+    image: "/assets/Screenshot 2025-07-08 144458.png",
+    description: "This project is a secure document management and digital signing platform that enables users to handle their PDF workflows seamlessly. It features robust user authentication with JWT tokens, allowing users to register, log in, and reset passwords securely. Users can upload, view, download, and delete PDF documents within the platform, with strict file type and size restrictions ensuring reliability and safety.Integrated digital signature capabilities allow users to add and manage signature fields on their documents, making agreements and approvals fully electronic and efficient. The system also sends automated email notifications for signing requests and password resets, enhancing user engagement and workflow automation without manual follow-ups.",
+
+
+
+
+    technologies: ["React.js", "Tailwind CSS", "React DnD","Axios ","React Router","Node.js + Express.js ", "MongoDB + Mongoose","JWT + bcrypt"],
+    link: "https://document-sign-app.vercel.app/",
+    repoLink: "https://github.com/ankan-barik/document-sign-app",
+    techCount: 8,
+    featureCount: 5,
+    features: [
+      
+
+
+      " 👤 User Authentication",
+
+
+      "🗂️ File Handling",
+
+      
+      "✍️ Digital Signatures",
+      "📧 Email Notifications",
+      "📥 Download & Print",
+
+    ]
+  },
    {
     title: "Track Zen",
     image: "/assets/Screenshot 2025-06-23 201634.png",
@@ -53,10 +82,10 @@ export const projects = [
 
 
 
-    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    technologies: ["React.js", "Tailwind CSS", "React DnD","Axios ","React Router","Node.js + Express.js ", "MongoDB + Mongoose","JWT + bcrypt"],
     link: "https://bug-tracker-pearl.vercel.app/",
     repoLink: "https://github.com/ankan-barik/bug-tracker",
-    techCount: 5,
+    techCount: 8,
     featureCount: 5,
     features: [
       
@@ -80,10 +109,10 @@ export const projects = [
     description: "Built a full-stack personal finance tracker with secure JWT authentication and RESTful APIs to manage user-specific income/expense data, including user registration and login with persistent data in MongoDB.Integrated Recharts for live bar and pie charts to visualize category-wise and monthly spending trends.Deployed both frontend and backend on Vercel, with a mobile-first responsive UI, protected routes, and dynamic state management.",
 
 
-    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    technologies: ["React.js", "Tailwind CSS", "Node.js + Express.js ", "MongoDB + Mongoose","JWT","Recharts"],
     link: "https://grow-wealth-chi.vercel.app/",
     repoLink: "https://github.com/ankan-barik/grow-wealth",
-    techCount: 5,
+    techCount: 6,
     featureCount: 5,
     features: [
       
