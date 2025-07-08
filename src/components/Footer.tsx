@@ -93,7 +93,7 @@ const Footer = () => {
         
         <div className="text-center text-gray-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Ankan Barik. All rights reserved.</p>
-          <p className="mt-2">Designed and developed by Ankan</p>
+          <p className="mt-2">Designed and developed by Ankan.</p>
         </div>
       </div>
     </footer>
