@@ -74,35 +74,7 @@ export const projects = [
 
     ]
   },
-   {
-    title: "Track Zen",
-    image: "/assets/Screenshot 2025-06-23 201634.png",
-    description: "An advanced, full-stack issue tracking platform inspired by Jira and Linear, built using the MERN stack. This project empowers teams to manage software bugs, feature requests, and development tasks using Kanban boards, role-based collaboration, and real-time ticket updates. It reflects real-world SaaS and enterprise dashboard use cases with JWT-based auth, project and team management, and responsive UI.",
-
-
-
-
-    technologies: ["React.js", "Tailwind CSS", "React DnD","Axios ","React Router","Node.js + Express.js ", "MongoDB + Mongoose","JWT + bcrypt"],
-    link: "https://bug-tracker-pearl.vercel.app/",
-    repoLink: "https://github.com/ankan-barik/bug-tracker",
-    techCount: 8,
-    featureCount: 5,
-    features: [
-      
-
-
-      "🔐 Secure Authentication",
-
-
-      "📁 Project & Team Management",
-
-      
-      "🧩 Kanban Board with Drag & Drop",
-      "🎯 Ticket Filtering & Search",
-      "📱 Responsive & Mobile-First UI",
-
-    ]
-  },
+   
     {
     title: "Expensia",
     image: "/assets/Screenshot 2025-05-27 152310.png",
@@ -161,22 +133,7 @@ export const projects = [
       "📱 Mobile responsive design for on-the-go appraisals"
     ]
   },
-  {
-    title: "Cryptoscape Pulse Watch",
-    image: "/assets/Screenshot 2025-05-08 210036.png",
-    description: "Fetches live crypto prices (from an API like CoinGecko, CoinMarketCap, etc.) Displays updates in real-time or at intervals. Show charts, trends, and asset names.",
-    technologies: ["React.js", "Tailwind CSS", "TypeScript", "Redux Toolkit", "JavaScript"],
-    link: "https://cryptoscape-pulse-watch.vercel.app/",
-    repoLink: "https://github.com/ankan-barik/cryptoscape-pulse-watch",
-    techCount: 5,
-    featureCount: 4,
-    features: [
-      "🔄 Fetches live cryptocurrency prices using APIs like CoinGecko or CoinMarketCap.",
-      "📈 Displays real-time or interval-based updates for selected assets.",
-      "📊 Visualizes market data with dynamic charts to show trends over time.",
-      "🪙 Shows key asset details including name, symbol, price, and 24h change."
-    ]
-  },
+
   {
     title: "Weather Sphere",
     image: "/assets/Screenshot 2025-04-27 132016.png",
@@ -195,23 +152,7 @@ export const projects = [
   },
  
 
-  {
-    title: "Jungle Slither Game",
-    image: "/assets/Screenshot 2025-04-02 161747.png",
-    description: "Implemented optimized Game Mechanics including collision detection, responsive design, and high-score saving for an enhanced user experience.",
-    technologies: ["JavaScript", "HTML5", "CSS3", ],
-    link: "https://jungle-slither-game.vercel.app/",
-    repoLink: "https://github.com/ankan-barik/jungle-slither-game",
-    techCount: 3,
-    featureCount: 4,
-    features: [
-      "🎮 Multiple difficulty levels with increasing speed",
-      "⚡ Special power-ups that change game mechanics",
-      "🌍 Global and local leaderboards",
-      "🌴 Custom jungle-themed visuals and sounds"
-    ]
-  },
-  
+ 
 
 
 ];
@@ -230,12 +171,7 @@ export const certificates = [
     date: "May 2025",
     image: "/assets/Screenshot 2025-05-13 123000.png"
   },
-  {
-    title: "Backend Development",
-    issuer: "PW Skills",
-    date: "August 2024",
-    image: "/assets/Screenshot 2025-05-13 122247.png"
-  },
+
   {
     title: "Java",
     issuer: "Udemy",

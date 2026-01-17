@@ -1012,18 +1012,7 @@ const technologies = [
   color: "bg-black",
 },
 
-  {
-    name: "Vite",
-    level: 80,
-    icon: (
-      <img
-        src="https://vitejs.dev/logo-with-shadow.png"
-        alt="Vite"
-        className="w-10 h-10"
-      />
-    ),
-    color: "bg-violet-500",
-  },
+
 ];
 
 
