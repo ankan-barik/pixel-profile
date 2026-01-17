@@ -161,7 +161,7 @@ const Index = () => {
   // Function to handle CV download
   const handleDownloadCV = () => {
     // Replace this URL with the actual path to your CV file
-    const cvUrl = "https://drive.google.com/file/d/1FukjFrRrBT9XU3mBZ9qWVcET04SjPoSp/view?usp=sharing";
+    const cvUrl = "https://drive.google.com/file/d/1VovTGcvXMus98er9kYimdWqhI1hwC2Q_/view";
 
     window.open(cvUrl, '_blank');
     toast({
@@ -868,7 +868,7 @@ const AboutSection = ({ handleDownloadCV }) => {
                 </div>
                 <div>
                   <h3 className="text-sm text-gray-500">Experience</h3>
-                  <p className="font-medium">Internship (Currently Ongoing)</p>
+                  <p className="font-medium">Fresher | Entry-Level Candidate</p>
                 </div>
               </div>
             </motion.div>
