@@ -63,11 +63,7 @@ export const projects = [
 
 
       " 👤 User Authentication",
-
-
       "🗂️ File Handling",
-
-      
       "✍️ Digital Signatures",
       "📧 Email Notifications",
       "📥 Download & Print",
@@ -98,6 +94,28 @@ export const projects = [
       "📱 Responsive & Mobile-First UI",
       "🚀 Deployment & Environment Setup",
 
+    ]
+  },
+  {
+    title: "Fraction Division Game",
+    image: "/assets/Screenshot 2026-03-26 000138.png",
+    description: "An interactive game designed to help students practice and master the concept of fraction division through engaging challenges and instant feedback.",
+    technologies: ["React.js", "JavaScript(Vanilla JS)", "Tailwind CSS", "PHP"],
+    link: "https://fraction-division-game.vercel.app/",
+    repoLink: "https://github.com/ankan-barik/fraction-division-game",
+    techCount: 4,
+    featureCount: 8,
+    features: [
+      "🎮 Interactive quiz-based gameplay",
+      "🎨 Beautiful UI with animations and effects",
+      "📊 Score, streak, and XP tracking",
+      "🧠 Step-by-step explanation of each question ",
+      "💡 Hint system for better understanding ",
+      "🎯 Multiple difficulty levels: Easy (Unit fractions) Medium (Proper fractions) Hard (Mixed & Improper fractions)",
+      "🔊 Sound effects and feedback ",
+      "🧩 Visual learning with pizza slices & number line ",
+
+      
     ]
   },
   {
@@ -136,18 +154,27 @@ export const projects = [
 
   {
     title: "Weather Sphere",
-    image: "/assets/Screenshot 2025-04-27 132016.png",
-    description: "Displays live temperature, humidity, visibility, wind speed, sunrise/sunset timings for any searched location, and well-structured weather cards for easy navigation.",
-    technologies: ["React.js", "Weather API", "Tailwind CSS", "JavaScript"],
-    link: "https://weather-dashboard-iota-tan.vercel.app/",
-    repoLink: "https://github.com/ankan-barik/Weather-Dashboard",
+    image: "/assets/Screenshot 2026-03-25 235535.png",
+    description: "A modern, data-driven weather analytics platform that provides real-time, hourly, and historical environmental insights using Open-Meteo APIs. Designed with a focus on usability, data visualization, and global accessibility.",
+    technologies: ["React.js", "Open-Meteo API", "Tailwind CSS", "JavaScript"],
+    link: "https://future-weather-hub-d9oz.vercel.app/",
+    repoLink: "https://github.com/ankan-barik/future-weather-hub",
     techCount: 4,
-    featureCount: 4,
+    featureCount: 12,
     features: [
-      "🌍 Real-time weather updates for any location",
-      "🌡️ Comprehensive weather metrics display",
-      "📆 7-day forecast with hourly breakdowns",
-      "🌅 Sunrise/sunset and moon phase tracking"
+      "📡 Auto Location Detection",
+      "🔍 Global City Search",
+      "🌡️ Temperature Overview",
+      "🧭 Wind Insights",
+      "☔ Rain Probability & Volume",
+      "🌫️ Air Quality Monitoring",
+      "📆 Custom Date Range Picker",
+      "📈 Temperature Trends Analysis",
+
+      "🌅 Sun Cycle Visualization",
+      "🌬️ Wind Speed Trends",
+      "🏭 Air Quality Trends",
+      "↔️ Smooth Horizontal Scrolling",
     ]
   },
  

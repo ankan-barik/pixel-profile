@@ -51,8 +51,8 @@ const Index = () => {
   const { toast } = useToast();
 
   const roles = [
-    "Frontend Developer",
-    "Backend Developer",
+    
+    "Mern Stack Developer",
     "UI/UX Designer",
 
   ];
@@ -473,8 +473,8 @@ const Navbar = ({ currentSection, handleNavigation, menuOpen, toggleMenu, scroll
 // Updated Landing Page Component with enhanced image card animations
 const EnhancedLandingPage = () => {
   // Sample data
-  const roles = ["Frontend Developer", "Backend Developer","UI/UX Designer"];
-  const roleColors = ["text-blue-600", "text-green-600", "text-pink-600"];
+  const roles = [ "Mern Stack Developer","UI/UX Designer"];
+  const roleColors = [ "text-blue-600", "text-green-600"];
   const [roleIndex, setRoleIndex] = useState(0);
 
   // Function to handle role rotation
@@ -805,7 +805,7 @@ const AboutSection = ({ handleDownloadCV }) => {
 
         <div className="about-content flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <motion.div
-            className="about-image w-full lg:w-2/5"
+            className="about-image w-min lg:w-2/5"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -822,7 +822,7 @@ const AboutSection = ({ handleDownloadCV }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">I'm a <span className="text-orange-400">B.Tech Computer Science</span> student</h2>
+            <h2 className="text-4xl md:text-2.5xl font-bold mb-4">I'm a <span className="text-orange-400">B.Tech Final Year IT</span> student</h2>
             <p className="text-gray-700 text-start mb-7">
               I'm currently studying at Kalinga Institute of Industrial Technology with a strong passion for web development.
               Proficient in both Frontend and Backend technologies like React.js, Node.js, MongoDB, and Express.js.
@@ -862,15 +862,18 @@ const AboutSection = ({ handleDownloadCV }) => {
                   <p className="font-medium">+91 7908840378</p>
                 </div>
               </div>
-              <div className="detail-item flex items-center">
-                <div className="icon w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-orange-400 mr-3">
-                  <Code size={20} />
-                </div>
-                <div>
-                  <h3 className="text-sm text-gray-500">Experience</h3>
-                  <p className="font-medium">Fresher | Entry-Level Candidate</p>
-                </div>
-              </div>
+<div className="detail-item flex items-center">
+  <div className="icon w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-orange-400 mr-3">
+    💼
+  </div>
+  <div>
+    <h3 className="text-sm text-gray-500">Experience</h3>
+    <p className="font-semibold text-gray-900">Full Stack Developer Intern</p>
+    <p className="text-blue-600 text-sm font-medium">Labmentix</p>
+    <p className="text-xs text-gray-500">May 2025 – Aug 2025 · 3 Months</p>
+    <p className="text-sm text-gray-600 mt-1 leading-relaxed"></p>
+  </div>
+</div>
             </motion.div>
 
             <motion.button
@@ -987,6 +990,30 @@ const technologies = [
     ),
     color: "bg-teal-500",
   },
+  {
+  name: "MongoDB",
+  level: 70,
+  icon: (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+      alt="MongoDB"
+      className="w-10 h-10"
+    />
+  ),
+  color: "bg-green-500",
+},
+  {
+  name: "Express.js",
+  level: 70,
+  icon: (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+      alt="Express.js"
+      className="w-10 h-10 bg-white rounded"
+    />
+  ),
+  color: "bg-gray-800",
+},
   {
     name: "GitHub",
     level: 65,
@@ -1523,12 +1550,12 @@ const ProjectDetailsModal = ({ project, closeModal, modalRef }) => {
             >
               <Github className="mr-2" size={18} /> View Code
             </a>
-            <button
+            {/* <button
               onClick={closeModal}
               className="modal-btn flex items-center justify-center px-6 py-3 border-2 border-gray-300 hover:border-gray-400 text-gray-700 rounded-xl transition-colors w-full sm:w-auto"
             >
               Back to Portfolio
-            </button>
+            </button> */}
           </div>
         </div>
       </motion.div>
