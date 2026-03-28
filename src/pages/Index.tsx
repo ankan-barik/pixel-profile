@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import {
   Github,
   Linkedin,
@@ -16,7 +17,10 @@ import {
   FileText,
   LayoutGrid,
   Book,
-  Coffee
+  Coffee,
+  GraduationCap,
+  Briefcase,
+  MapPin
 } from 'lucide-react';
 import { techStackData, projects, certificates } from '@/data/portfolioData';
 import Footer from '@/components/Footer';
@@ -52,13 +56,17 @@ const Index = () => {
 
   const roles = [
     
+     "Full Stack Developer",
     "Mern Stack Developer",
+    "React & Node.js Engineer",
     "UI/UX Designer",
+
 
   ];
 
   const roleColors = [
-    "text-indigo-700",    // Frontend Engineer - Blue
+    "text-indigo-700", 
+    "text-red-600",   // Frontend Engineer - Blue
     "text-green-600",   // Web Developer - Green
     "text-pink-500",  // UI/UX Designer - Purple
 
@@ -161,7 +169,7 @@ const Index = () => {
   // Function to handle CV download
   const handleDownloadCV = () => {
     // Replace this URL with the actual path to your CV file
-    const cvUrl = "https://drive.google.com/file/d/1VovTGcvXMus98er9kYimdWqhI1hwC2Q_/view";
+    const cvUrl = "https://drive.google.com/file/d/1hFg5NMrzmIXhgOY_IjiPUnSTEAyTaydN/view?usp=sharing";
 
     window.open(cvUrl, '_blank');
     toast({
@@ -473,8 +481,8 @@ const Navbar = ({ currentSection, handleNavigation, menuOpen, toggleMenu, scroll
 // Updated Landing Page Component with enhanced image card animations
 const EnhancedLandingPage = () => {
   // Sample data
-  const roles = [ "Mern Stack Developer","UI/UX Designer"];
-  const roleColors = [ "text-blue-600", "text-green-600"];
+  const roles = ["Full Stack Developer", "Mern Stack Developer","React & Node.js Engineer","UI/UX Designer"];
+  const roleColors = [ "text-indigo-600", "text-amber-500","text-green-600","text-pink-600",];
   const [roleIndex, setRoleIndex] = useState(0);
 
   // Function to handle role rotation
@@ -592,6 +600,20 @@ const EnhancedLandingPage = () => {
                 <Twitter size={20} className="relative z-10 text-blue-400 group-hover:text-white transition-colors duration-300" />
               </a>
             </div>
+
+            <div className="social-icon-wrapper relative">
+  <div className="social-icon-shadow absolute inset-0 bg-red-400 rounded-full blur-sm opacity-30"></div>
+
+  <a
+    href="mailto:ankanbarik2004@gmail.com"
+    className="social-link relative flex items-center justify-center w-12 h-12 bg-white text-red-400 rounded-full shadow-lg transform transition-all duration-300 z-10 hover:shadow-xl hover:bg-black group"
+  >
+    <Mail 
+      size={20} 
+      className="relative z-10 text-red-400 group-hover:text-white transition-colors duration-300" 
+    />
+  </a>
+</div>
           </div>
         </div>
 
@@ -788,113 +810,425 @@ const EnhancedLandingPage = () => {
     </section>
   );
 };
-// About Section Component
+// About Section Component ─────────────────────────────────────────────────────────────────────────────
+
 const AboutSection = ({ handleDownloadCV }) => {
+
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  });
+
+  const fadeLeft = (delay = 0) => ({
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  });
+
+  const fadeRight = (delay = 0) => ({
+    initial: { opacity: 0, x: 50 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  });
+
+  const stats = [
+    { number: '5+', label: 'Full-Stack Projects ' },
+    { number: '3mo', label: 'Internship' },
+    { number: '10+', label: 'Tech Stacks' },
+    { number: '2026', label: 'Graduating' },
+  ];
+
+const quickDetails = [
+  { icon: <Briefcase size={15} />, label: 'Available for', value: 'Full-Stack Developer Roles' },
+  { icon: <Mail size={15} />,      label: 'Email', value: 'ankanbarik2004@gmail.com' },
+  { icon: <Phone size={15} />,     label: 'Phone', value: '+91 7908840378' },
+  { icon: <MapPin size={15} />,    label: 'Based in', value: 'Bhubaneswar, Odisha' },
+];
+
   return (
-    <motion.section
-      className="about-section py-20 px-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+    <section
+      className="about-section"
+      style={{
+        background: '#ffffff',
+        minHeight: '100vh',
+        padding: '100px 0 80px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
-      <div className="container mx-auto">
-        <div className="section-header text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">About <span className="text-orange-400">Me</span></h2>
-          <div className="w-24 h-1 bg-orange-400 mx-auto mt-4"></div>
-        </div>
+      {/* ── Decorative background blobs ── */}
+      <div style={{
+        position: 'absolute', top: '-80px', right: '-80px',
+        width: '500px', height: '500px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(251,146,60,0.07) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
+      <div style={{
+        position: 'absolute', bottom: '-100px', left: '-100px',
+        width: '400px', height: '400px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
+      {/* Subtle grid texture */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)',
+        backgroundSize: '32px 32px',
+        pointerEvents: 'none',
+        opacity: 0.5,
+      }} />
 
-        <div className="about-content flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          <motion.div
-            className="about-image w-min lg:w-2/5"
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            <div className="image-container relative">
-              <div className="about-blob absolute w-full h-full bg-blue-50 rounded-full filter blur-3xl opacity-30 transform -translate-x-4 translate-y-4"></div>
-              <img src="/assets/WhatsApp Image 2025-04-02 at 01.02.36_d2329f85.jpg" alt="Ankan Barik" className="relative z-10 w-full max-w-md mx-auto rounded-2xl shadow-lg" />
-            </div>
-          </motion.div>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative' }}>
 
-          <motion.div
-            className="about-text w-full lg:w-3/5"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-2.5xl font-bold mb-4">I'm a <span className="text-orange-400">B.Tech Final Year IT</span> student</h2>
-            <p className="text-gray-700 text-start mb-7">
-              I'm currently studying at Kalinga Institute of Industrial Technology with a strong passion for web development.
-              Proficient in both Frontend and Backend technologies like React.js, Node.js, MongoDB, and Express.js.
-              Experienced in creating responsive and innovative web solutions.
-            </p>
+       
 
-            <motion.div
-              className="about-details grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+{/* ── HERO HEADING ── */}
+<motion.div {...fadeUp(0.1)} style={{ textAlign: "center", marginBottom: "60px" }}>
+  <h2
+    style={{
+      fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+      fontWeight: 800,
+      color: "#0f0f0f",
+      lineHeight: 1.1,
+      letterSpacing: "-0.02em",
+      marginBottom: "0",
+    }}
+  >
+    Education &
+    <span
+      style={{
+        marginLeft: "8px",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+        backgroundImage:
+          "linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%)",
+      }}
+    >
+      Experience
+    </span>
+  </h2>
+
+  <div
+    style={{
+      width: "100px",
+      height: "3px",
+      margin: "18px auto 0",
+      background: "linear-gradient(90deg, #fb923c, #fdba74)",
+      borderRadius: "2px",
+    }}
+  />
+</motion.div>
+
+        {/* ── MAIN TWO-COLUMN LAYOUT ── */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '60px',
+          alignItems: 'start',
+          marginBottom: '64px',
+        }}
+          className="about-main-grid"
+        >
+
+          {/* ─── LEFT COLUMN — Bio + Stats + Details ─── */}
+          <div>
+            <motion.p
+              {...fadeLeft(0.2)}
+              style={{
+                fontSize: '1.05rem',
+                color: '#4b5563',
+                lineHeight: 1.9,
+                marginBottom: '36px',
+                borderLeft: '3px solid #fb923c',
+                paddingLeft: '20px',
+              }}
             >
-              <div className="detail-item flex items-center">
-                <div className="icon w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-orange-400 mr-3">
-                  <Calendar size={20} />
-                </div>
-                <div>
-                  <h3 className="text-sm text-gray-500">Date of Birth</h3>
-                  <p className="font-medium">May 11, 2004</p>
-                </div>
-              </div>
-              <div className="detail-item flex items-center">
-                <div className="icon w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-orange-400 mr-3">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <h3 className="text-sm text-gray-500">Email</h3>
-                  <p className="font-medium">ankanbarik2004@gmail.com</p>
-                </div>
-              </div>
-              <div className="detail-item flex items-center">
-                <div className="icon w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-orange-400 mr-3">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <h3 className="text-sm text-gray-500">Phone</h3>
-                  <p className="font-medium">+91 7908840378</p>
-                </div>
-              </div>
-<div className="detail-item flex items-center">
-  <div className="icon w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full text-orange-400 mr-3">
-    💼
-  </div>
-  <div>
-    <h3 className="text-sm text-gray-500">Experience</h3>
-    <p className="font-semibold text-gray-900">Full Stack Developer Intern</p>
-    <p className="text-blue-600 text-sm font-medium">Labmentix</p>
-    <p className="text-xs text-gray-500">May 2025 – Aug 2025 · 3 Months</p>
-    <p className="text-sm text-gray-600 mt-1 leading-relaxed"></p>
-  </div>
-</div>
+              I'm currently pursuing a{' '}
+              <strong style={{ color: '#0f0f0f', fontWeight: 700 }}>
+                B.Tech in Information Technology at Kalinga Institute of Industrial Technology (KIIT).
+              </strong>{' '}
+           Passionate about full-stack web development, I enjoy building modern, scalable web applications. I have experience working with technologies such as React.js, Node.js, Express.js, and MongoDB, and I focus on creating responsive, user-friendly digital experiences.
+            </motion.p>
+
+            {/* Stats row */}
+            <motion.div
+              {...fadeLeft(0.32)}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '1px',
+                marginBottom: '36px',
+                border: '1px solid rgba(0,0,0,0.07)',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                background: 'rgba(0,0,0,0.06)',
+              }}
+            >
+              {stats.map(({ number, label }, i) => (
+                <motion.div
+                  key={label}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.36 + i * 0.08, duration: 0.6 }}
+                  whileHover={{ background: '#fff8f0' }}
+                  style={{
+                    padding: '20px 12px',
+                    textAlign: 'center',
+                    background: '#ffffff',
+                    cursor: 'default',
+                    transition: 'background 0.2s',
+                  }}
+                >
+                  <p style={{
+                    fontSize: '1.6rem', fontWeight: 800, color: '#fb923c',
+                    letterSpacing: '-0.02em', lineHeight: 1, marginBottom: '4px',
+                  }}>{number}</p>
+                  <p style={{ fontSize: '0.68rem', color: '#9ca3af', fontWeight: 500, letterSpacing: '0.04em', textTransform: 'uppercase' }}>{label}</p>
+                </motion.div>
+              ))}
             </motion.div>
 
-            <motion.button
-              className="primary-btn px-8 py-3 bg-orange-400 hover:bg-orange-700 text-white rounded-full transition-all duration-300 text-base font-medium flex items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              onClick={handleDownloadCV}
+            {/* Quick details */}
+            <motion.div
+              {...fadeLeft(0.44)}
+              style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '36px' }}
             >
-              <ArrowDown size={18} className="mr-2" /> Download CV
-            </motion.button>
-          </motion.div>
+              {quickDetails.map(({ icon, label, value }) => (
+                <div key={label} style={{
+                  display: 'flex', alignItems: 'center', gap: '14px',
+                  padding: '12px 16px', borderRadius: '12px',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: '#fafafa',
+                  transition: 'border-color 0.2s, background 0.2s',
+                }}>
+                  <div style={{
+                    width: '34px', height: '34px', borderRadius: '9px',
+                    background: '#fff7ed', border: '1px solid rgba(249,115,22,0.2)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#f97316', flexShrink: 0,
+                  }}>
+                    {icon}
+                  </div>
+                  <div style={{ minWidth: 0 }}>
+                    <p style={{ fontSize: '0.68rem', color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1px' }}>{label}</p>
+                    <p style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1f2937', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{value}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* CTA button */}
+            <motion.div {...fadeLeft(0.54)}>
+              <motion.button
+                className="primary-btn"
+                whileHover={{ scale: 1.04, boxShadow: '0 12px 40px rgba(249,115,22,0.3)' }}
+                whileTap={{ scale: 0.97 }}
+                onClick={handleDownloadCV}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '10px',
+                  padding: '14px 36px',
+                  background: 'linear-gradient(135deg, #fb923c 0%, #f97316 100%)',
+                  color: '#ffffff',
+                  border: 'none', borderRadius: '999px',
+                  fontSize: '0.92rem', fontWeight: 700,
+                  cursor: 'pointer', letterSpacing: '0.02em',
+                  boxShadow: '0 4px 20px rgba(249,115,22,0.22)',
+                  transition: 'box-shadow 0.3s',
+                }}
+              >
+                <ArrowDown size={16} />
+                Download CV
+              </motion.button>
+            </motion.div>
+          </div>
+
+          {/* ─── RIGHT COLUMN — Cards ─── */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+
+            {/* ── EDUCATION CARD ── */}
+            <motion.div
+              {...fadeRight(0.25)}
+              whileHover={{ y: -6, boxShadow: '0 24px 60px rgba(249,115,22,0.13)' }}
+              style={{
+                background: '#ffffff',
+                borderRadius: '24px',
+                border: '1px solid rgba(249,115,22,0.15)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                overflow: 'hidden',
+                transition: 'box-shadow 0.35s, transform 0.35s',
+              }}
+            >
+              {/* Header band */}
+              <div style={{
+                padding: '20px 28px 18px',
+                background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
+                borderBottom: '1px solid rgba(249,115,22,0.1)',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{
+                    width: '40px', height: '40px', borderRadius: '12px',
+                    background: 'rgba(249,115,22,0.12)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <GraduationCap size={20} color="#f97316" />
+                  </div>
+                  <div>
+                    <p style={{ fontSize: '0.68rem', color: '#fb923c', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1px' }}>Education</p>
+                    <p style={{ fontSize: '0.78rem', color: '#9a3412', fontWeight: 600 }}>Academic Background</p>
+                  </div>
+                </div>
+                <span style={{
+                  padding: '5px 14px', borderRadius: '999px',
+                  background: 'rgba(249,115,22,0.12)',
+                  color: '#c2410c', fontSize: '0.72rem', fontWeight: 700,
+                  border: '1px solid rgba(249,115,22,0.2)',
+                }}>2022 – 2026</span>
+              </div>
+
+              {/* Body */}
+              <div style={{ padding: '22px 28px 24px' }}>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111827', marginBottom: '6px', letterSpacing: '-0.01em' }}>
+                  B.Tech — Information Technology
+                </h3>
+                <p style={{ fontSize: '0.85rem', fontWeight: 700, color: '#f97316', marginBottom: '4px' }}>
+                  KIIT University
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '20px' }}>
+                  <MapPin size={12} color="#9ca3af" />
+                  <p style={{ fontSize: '0.78rem', color: '#9ca3af' }}>Bhubaneswar, Odisha &nbsp;·&nbsp; Final Year</p>
+                </div>
+
+                <div style={{
+                  padding: '14px 16px', borderRadius: '12px',
+                  background: '#fafafa', border: '1px solid rgba(0,0,0,0.05)',
+                  marginBottom: '16px',
+                }}>
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#d1d5db', fontWeight: 700, marginBottom: '10px' }}>Core Subjects</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {['DSA', 'DBMS', 'OS', 'Networks', 'CN', 'Mobile Computing'].map(t => (
+                      <span key={t} style={{
+                        fontSize: '0.72rem', fontWeight: 600, padding: '4px 12px',
+                        borderRadius: '999px', background: '#fff7ed',
+                        color: '#9a3412', border: '1px solid rgba(249,115,22,0.2)',
+                      }}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ── INTERNSHIP CARD ── */}
+            <motion.div
+              {...fadeRight(0.38)}
+              whileHover={{ y: -6, boxShadow: '0 24px 60px rgba(59,130,246,0.12)' }}
+              style={{
+                background: '#ffffff',
+                borderRadius: '24px',
+                border: '1px solid rgba(59,130,246,0.15)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                overflow: 'hidden',
+                transition: 'box-shadow 0.35s, transform 0.35s',
+              }}
+            >
+              {/* Header band */}
+              <div style={{
+                padding: '20px 28px 18px',
+                background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+                borderBottom: '1px solid rgba(59,130,246,0.1)',
+                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{
+                    width: '40px', height: '40px', borderRadius: '12px',
+                    background: 'rgba(59,130,246,0.12)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <Briefcase size={20} color="#3b82f6" />
+                  </div>
+                  <div>
+                    <p style={{ fontSize: '0.68rem', color: '#3b82f6', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1px' }}>Experience</p>
+                    <p style={{ fontSize: '0.78rem', color: '#1e40af', fontWeight: 600 }}>Professional Work</p>
+                  </div>
+                </div>
+                <span style={{
+                  padding: '5px 14px', borderRadius: '999px',
+                  background: 'rgba(59,130,246,0.1)',
+                  color: '#1d4ed8', fontSize: '0.72rem', fontWeight: 700,
+                  border: '1px solid rgba(59,130,246,0.2)',
+                }}>May 2025 – Aug 2025</span>
+              </div>
+
+              {/* Body */}
+              <div style={{ padding: '22px 28px 24px' }}>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#111827', marginBottom: '6px', letterSpacing: '-0.01em' }}>
+                  Full Stack Developer Intern
+                </h3>
+                <p style={{ fontSize: '0.85rem', fontWeight: 700, color: '#3b82f6', marginBottom: '4px' }}>
+                  Labmentix
+                </p>
+                <p style={{ fontSize: '0.78rem', color: '#9ca3af', marginBottom: '20px' }}>Remote &nbsp;·&nbsp; 3 Months</p>
+
+                <div style={{
+                  padding: '14px 16px', borderRadius: '12px',
+                  background: '#fafafa', border: '1px solid rgba(0,0,0,0.05)',
+                  marginBottom: '16px',
+                }}>
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#d1d5db', fontWeight: 700, marginBottom: '12px' }}>Highlights</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '9px' }}>
+                    {[
+                      'Developed full-stack features using React.js and Node.js',
+                      'Designed and integrated RESTful APIs with MongoDB',
+                      'Improved UI/UX and optimized performance of web applications',
+                    ].map(pt => (
+                      <div key={pt} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                        <div style={{
+                          width: '18px', height: '18px', borderRadius: '5px',
+                          background: 'rgba(59,130,246,0.1)', display: 'flex',
+                          alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '1px',
+                        }}>
+                          <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#3b82f6' }} />
+                        </div>
+                        <span style={{ fontSize: '0.82rem', color: '#4b5563', lineHeight: 1.55 }}>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {['React.js', 'Node.js', 'MongoDB', 'Express.js', 'REST APIs'].map(t => (
+                    <span key={t} style={{
+                      fontSize: '0.72rem', fontWeight: 600, padding: '4px 12px',
+                      borderRadius: '999px', background: '#eff6ff',
+                      color: '#1d4ed8', border: '1px solid rgba(59,130,246,0.2)',
+                    }}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
+
       </div>
-    </motion.section>
+
+      {/* Responsive styles */}
+      <style>{`
+        @media (max-width: 900px) {
+          .about-main-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+        }
+      `}</style>
+    </section>
   );
 };
 
 // Skills Section Component
+
 const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
@@ -1184,13 +1518,23 @@ const technologies = [
       <div className="container mx-auto">
         <div className="section-header text-center mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-900"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            My <span className="text-teal-600">Skills</span>
-          </motion.h2>
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  style={{
+    fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
+    fontWeight: 800,
+    color: '#0f0f0f',
+    lineHeight: 1.1,
+    letterSpacing: '-0.02em',
+    textAlign: 'center'
+  }}
+>
+  My{" "}
+  <span className="bg-gradient-to-r from-teal-500 to-teal-700 bg-clip-text text-transparent">
+    Skills
+  </span>
+</motion.h2>
           <div className="w-24 h-1 bg-teal-600 mx-auto mt-4"></div>
         </div>
 
@@ -1243,7 +1587,7 @@ const technologies = [
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
-          <h3 className="tech-skills-title text-2xl font-bold text-center text-gray-900 mb-12">Technologies I Work With</h3>
+          <h3 className="tech-skills-title text-2xl font-extrabold text-center text-gray-900 mb-12">Technologies I Work With</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {technologies.map((tech, index) => (
               <TechnologyCard
@@ -1285,9 +1629,23 @@ const PortfolioSection = ({ openProjectDetails }) => {
     >
       <div className="container mx-auto">
         <div className="section-header text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Portfolio <span className="text-purple-600">Showcase</span></h2>
-          <div className="w-24 h-1 bg-purple-600 mx-auto mt-4"></div>
-        </div>
+  <h2
+    style={{
+      fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+      fontWeight: 800,
+      color: "#0f0f0f",
+      lineHeight: 1.1,
+      letterSpacing: "-0.02em",
+    }}
+  >
+    Portfolio{" "}
+    <span className="bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">
+      Showcase
+    </span>
+  </h2>
+
+  <div className="w-24 h-1 bg-purple-600 mx-auto mt-4 rounded"></div>
+</div>
 
         <motion.div
           className="portfolio-tabs flex flex-wrap justify-center mb-10 gap-4"
@@ -1563,271 +1921,564 @@ const ProjectDetailsModal = ({ project, closeModal, modalRef }) => {
   );
 };
 
-// Contact Section Component
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     success: false,
-    message: ''
+    message: "",
   });
 
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-
-    // Clear error for this field when user starts typing
-    if (formErrors[name]) {
-      const updatedErrors = { ...formErrors };
-      delete updatedErrors[name];
-      setFormErrors(updatedErrors);
+    setFormData({ ...formData, [name]: value });
+    if (formErrors[name as keyof FormErrors]) {
+      const updated = { ...formErrors };
+      delete updated[name as keyof FormErrors];
+      setFormErrors(updated);
     }
   };
 
   const validateForm = () => {
     const errors: FormErrors = {};
-
-    if (!formData.firstName.trim()) {
-      errors.firstName = 'First name is required';
-    }
-
-    if (!formData.lastName.trim()) {
-      errors.lastName = 'Last name is required';
-    }
-
+    if (!formData.firstName.trim()) errors.firstName = "First name is required";
+    if (!formData.lastName.trim()) errors.lastName = "Last name is required";
     if (!formData.email.trim()) {
-      errors.email = 'Email is required';
+      errors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = 'Email is invalid';
+      errors.email = "Email is invalid";
     }
-
-    if (!formData.message.trim()) {
-      errors.message = 'Message is required';
-    }
-
+    if (!formData.message.trim()) errors.message = "Message is required";
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (validateForm()) {
-      setIsLoading(true);
-
-      try {
-        // Create form data object for the API
-        const formObject = {
-          access_key: "0eb99993-ac65-44fb-aa35-af2f3036bcab",
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone || "Not provided",
-          message: formData.message,
-          subject: `Contact form submission from ${formData.firstName} ${formData.lastName}`
-        };
-
-        // Send the JSON data to the API
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify(formObject)
+    if (!validateForm()) return;
+    setIsLoading(true);
+    try {
+      const formObject = {
+        access_key: "0eb99993-ac65-44fb-aa35-af2f3036bcab",
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone || "Not provided",
+        message: formData.message,
+        subject: `Contact form submission from ${formData.firstName} ${formData.lastName}`,
+      };
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formObject),
+      });
+      const data = await response.json();
+      setIsLoading(false);
+      if (data.success) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: "Your message has been sent! I'll get back to you soon.",
         });
-
-        const data = await response.json();
-
-        setIsLoading(false);
-        if (data.success) {
-          setFormStatus({
-            submitted: true,
-            success: true,
-            message: 'Your message has been sent successfully! I will get back to you soon.'
-          });
-
-          toast({
-            title: "Message Sent!",
-            description: "Thanks for reaching out. I'll get back to you soon!",
-            variant: "default"
-          });
-
-          // Reset form after successful submission
-          setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            message: ''
-          });
-        } else {
-          setFormStatus({
-            submitted: true,
-            success: false,
-            message: `Error: ${data.message || 'There was an error sending your message. Please try again.'}`
-          });
-
-          toast({
-            title: "Error",
-            description: "There was a problem sending your message. Please try again.",
-            variant: "destructive"
-          });
-        }
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        setIsLoading(false);
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+      } else {
         setFormStatus({
           submitted: true,
           success: false,
-          message: 'There was an error sending your message. Please try again.'
-        });
-
-        toast({
-          title: "Error",
-          description: "There was a problem sending your message. Please try again.",
-          variant: "destructive"
+          message: data.message || "Something went wrong. Please try again.",
         });
       }
+    } catch {
+      setIsLoading(false);
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "There was an error sending your message. Please try again.",
+      });
     }
   };
 
   return (
-    <section className="contact-section py-20 px-4">
-      <div className="container mx-auto">
-        <div className="section-header text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Get In <span className="text-pink-600">Touch</span></h2>
-          <div className="w-24 h-1 bg-pink-600 mx-auto mt-4"></div>
+    <section className="relative py-24 px-4 overflow-hidden bg-[#faf9f7]">
+      {/* Background texture */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 10%, #fce7f3 0%, transparent 50%), radial-gradient(circle at 80% 90%, #fce7f3 0%, transparent 50%)",
+          opacity: 0.6,
+        }}
+      />
+
+      <div className="relative container mx-auto max-w-6xl">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p
+            className="text-pink-500 font-semibold tracking-[0.2em] text-xs uppercase mb-3"
+            style={{ fontFamily: "'DM Mono', monospace" }}
+          >
+            Let's collaborate
+          </p>
+          <h2
+            className="text-[#1a1a1a]"
+            style={{
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 700,
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Get In{" "}
+            <span
+              className="italic"
+              style={{
+                color: "#be185d",
+                fontStyle: "italic",
+              }}
+            >
+              Touch
+            </span>
+          </h2>
+          <div className="flex items-center justify-center gap-3 mt-5">
+            <div className="h-px w-12 bg-pink-200" />
+            <div className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+            <div className="h-px w-12 bg-pink-200" />
+          </div>
         </div>
 
-        <div className="contact-container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="contact-illustration hidden lg:block">
-            <div className="animated-designer relative h-96">
-              <div className="designer-container relative w-full h-full">
-                <div className="designer-image absolute inset-0 bg-pink-200 rounded-xl overflow-hidden">
-                  <img src="/assets/contact-illustration.svg" alt="Contact" className="w-full h-full object-cover" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+          {/* Left — SVG Illustration Panel */}
+          <div className="hidden lg:flex flex-col justify-between rounded-3xl overflow-hidden relative bg-[#1a0a10] p-10">
+            {/* Decorative blobs */}
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-pink-900 opacity-30 blur-3xl -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-rose-800 opacity-20 blur-2xl translate-y-1/3 -translate-x-1/4" />
+
+            <div className="relative z-10">
+              <p
+                className="text-pink-300 text-xs font-semibold tracking-[0.18em] uppercase mb-4"
+                style={{ fontFamily: "'DM Mono', monospace" }}
+              >
+                Available for work
+              </p>
+              <h3
+                className="text-white leading-tight mb-6"
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(1.5rem, 2.5vw, 2rem)",
+                  fontWeight: 700,
+                }}
+              >
+                Have a project <br />
+                <span className="text-pink-300 italic">in mind?</span>
+              </h3>
+              <p className="text-[#c9a0b0] text-sm leading-relaxed max-w-xs">
+                Whether it's a website, a brand, or an idea — I'd love to hear
+                about it. Let's create something remarkable together.
+              </p>
+            </div>
+
+            {/* SVG Illustration */}
+            <div className="relative z-10 my-8 flex justify-center">
+              <svg
+                viewBox="0 0 320 260"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full max-w-xs"
+              >
+                {/* Desk */}
+                <rect x="20" y="185" width="280" height="10" rx="5" fill="#4a1535" />
+                {/* Monitor stand */}
+                <rect x="148" y="162" width="24" height="26" rx="4" fill="#3a1028" />
+                <rect x="132" y="185" width="56" height="7" rx="3" fill="#3a1028" />
+                {/* Monitor */}
+                <rect x="72" y="80" width="176" height="88" rx="10" fill="#2a0d1e" stroke="#be185d" strokeWidth="2" />
+                <rect x="80" y="88" width="160" height="70" rx="7" fill="#1a0812" />
+                {/* Code lines on screen */}
+                <rect x="90" y="98" width="60" height="4" rx="2" fill="#f472b6" opacity="0.8" />
+                <rect x="90" y="108" width="100" height="4" rx="2" fill="#fbcfe8" opacity="0.5" />
+                <rect x="98" y="118" width="80" height="4" rx="2" fill="#f472b6" opacity="0.6" />
+                <rect x="98" y="128" width="50" height="4" rx="2" fill="#fbcfe8" opacity="0.4" />
+                <rect x="90" y="138" width="70" height="4" rx="2" fill="#f472b6" opacity="0.7" />
+                {/* Cursor blink */}
+                <rect x="164" y="138" width="3" height="10" rx="1" fill="#f9a8d4">
+                  <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+                </rect>
+
+                {/* Keyboard */}
+                <rect x="100" y="192" width="120" height="22" rx="5" fill="#2a0d1e" stroke="#4a1535" strokeWidth="1" />
+                <rect x="106" y="197" width="12" height="7" rx="2" fill="#3a1028" />
+                <rect x="122" y="197" width="12" height="7" rx="2" fill="#3a1028" />
+                <rect x="138" y="197" width="12" height="7" rx="2" fill="#3a1028" />
+                <rect x="154" y="197" width="12" height="7" rx="2" fill="#3a1028" />
+                <rect x="170" y="197" width="12" height="7" rx="2" fill="#3a1028" />
+                <rect x="186" y="197" width="12" height="7" rx="2" fill="#3a1028" />
+                <rect x="113" y="207" width="50" height="5" rx="2" fill="#3a1028" />
+                <rect x="170" y="207" width="20" height="5" rx="2" fill="#3a1028" />
+
+                {/* Mouse */}
+                <rect x="232" y="192" width="20" height="26" rx="10" fill="#2a0d1e" stroke="#4a1535" strokeWidth="1" />
+                <line x1="242" y1="192" x2="242" y2="206" stroke="#4a1535" strokeWidth="1" />
+
+                {/* Plant pot */}
+                <rect x="28" y="170" width="24" height="18" rx="3" fill="#3a1028" />
+                <ellipse cx="40" cy="170" rx="14" ry="5" fill="#2a0d1e" />
+                <path d="M40 165 Q30 148 22 155 Q28 160 40 165Z" fill="#831843" />
+                <path d="M40 165 Q50 148 58 155 Q52 160 40 165Z" fill="#9d174d" />
+                <path d="M40 162 Q40 145 38 140 Q42 145 40 162Z" fill="#be185d" />
+
+                {/* Coffee mug */}
+                <rect x="263" y="173" width="22" height="16" rx="4" fill="#3a1028" />
+                <path d="M285 178 Q294 178 294 183 Q294 188 285 188" stroke="#4a1535" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+                <rect x="266" y="176" width="16" height="4" rx="2" fill="#f472b6" opacity="0.4" />
+                {/* Steam */}
+                <path d="M269 172 Q271 168 269 164" stroke="#f9a8d4" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.5">
+                  <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite" />
+                </path>
+                <path d="M275 170 Q277 165 275 160" stroke="#f9a8d4" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.4">
+                  <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2.3s" repeatCount="indefinite" />
+                </path>
+
+                {/* Floating shapes */}
+                <circle cx="48" cy="68" r="10" fill="#be185d" opacity="0.25">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;0,-8;0,0" dur="3s" repeatCount="indefinite" />
+                </circle>
+                <rect x="270" y="55" width="14" height="14" rx="3" fill="#f472b6" opacity="0.2" transform="rotate(20 277 62)">
+                  <animateTransform attributeName="transform" type="rotate" values="20 277 62;35 277 62;20 277 62" dur="4s" repeatCount="indefinite" />
+                </rect>
+                <circle cx="295" cy="120" r="6" fill="#fda4af" opacity="0.2">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0" dur="3.5s" repeatCount="indefinite" />
+                </circle>
+
+                {/* Email envelope floating */}
+                <g opacity="0.85">
+                  <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0" dur="4s" repeatCount="indefinite" />
+                  <rect x="50" y="28" width="42" height="30" rx="4" fill="#be185d" opacity="0.7" />
+                  <polyline points="50,28 71,46 92,28" stroke="#fce7f3" strokeWidth="1.5" fill="none" />
+                </g>
+              </svg>
+            </div>
+
+          {/* Info & Social Links */}
+            <div className="relative z-10 flex flex-col gap-2.5">
+              {/* Contact details */}
+              {[
+                { icon: "✉", label: "ankanbarik2004@gmail.com", href: "mailto:ankanbarik2004@gmail.com" },
+                { icon: "📞", label: "+91 7908840378", href: "tel:+91XXXXXXXXXX" },
+                { icon: "📍", label: "India — Open to Remote", href: null },
+              ].map(({ icon, label, href }) => (
+                <div key={label} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-pink-900/50 flex items-center justify-center text-sm flex-shrink-0">
+                    {icon}
+                  </div>
+                  {href ? (
+                    <a href={href} className="text-[#c9a0b0] text-sm hover:text-pink-300 transition-colors truncate">
+                      {label}
+                    </a>
+                  ) : (
+                    <span className="text-[#c9a0b0] text-sm">{label}</span>
+                  )}
                 </div>
-                <div className="floating-element element-1 absolute top-10 right-10 w-12 h-12 bg-pink-400 rounded-full opacity-60 animate-float-slow"></div>
-                <div className="floating-element element-2 absolute bottom-12 left-12 w-8 h-8 bg-blue-400 rounded-full opacity-60 animate-float-medium"></div>
-                <div className="floating-element element-3 absolute top-1/4 left-1/4 w-6 h-6 bg-yellow-400 rounded-full opacity-60 animate-float-fast"></div>
+              ))}
+ 
+              {/* Divider */}
+              <div className="flex items-center gap-2 my-1">
+                <div className="h-px flex-1 bg-pink-900/40" />
+                <span className="text-[10px] text-pink-800/80 tracking-widest uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace" }}>
+                  socials
+                </span>
+                <div className="h-px flex-1 bg-pink-900/40" />
+              </div>
+ 
+              {/* Social buttons */}
+              <div className="flex gap-2.5">
+                {/* GitHub */}
+                <a
+                  href="https://github.com/ankan-barik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-950/60 border border-pink-900/50 hover:border-pink-600/60 hover:bg-pink-900/40 transition-all group"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-pink-300 group-hover:text-white transition-colors">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                  <span className="text-xs text-pink-300 group-hover:text-white transition-colors" style={{ fontFamily: "'DM Mono', monospace" }}>
+                    GitHub
+                  </span>
+                </a>
+ 
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/aankan-barik/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-950/60 border border-pink-900/50 hover:border-pink-600/60 hover:bg-pink-900/40 transition-all group"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-pink-300 group-hover:text-white transition-colors">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  <span className="text-xs text-pink-300 group-hover:text-white transition-colors" style={{ fontFamily: "'DM Mono', monospace" }}>
+                    LinkedIn
+                  </span>
+                </a>
+ 
+                {/* Vercel */}
+                <a
+                  href="https://vercel.com/ankanbarik2004-gmailcoms-projects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-950/60 border border-pink-900/50 hover:border-pink-600/60 hover:bg-pink-900/40 transition-all group"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-pink-300 group-hover:text-white transition-colors">
+                    <path d="M24 22.525H0L12 1.475 24 22.525z" />
+                  </svg>
+                  <span className="text-xs text-pink-300 group-hover:text-white transition-colors" style={{ fontFamily: "'DM Mono', monospace" }}>
+                    Vercel
+                  </span>
+                </a>
+
+                <a
+  href="https://instagram.com/aaankannn"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-950/60 border border-pink-900/50 hover:border-pink-600/60 hover:bg-pink-900/40 transition-all group"
+>
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-4 h-4 text-pink-300 group-hover:text-white transition-colors"
+  >
+    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5zm4.25 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.25-.88a1.13 1.13 0 1 1-1.13-1.12 1.13 1.13 0 0 1 1.13 1.12z" />
+  </svg>
+
+  <span
+    className="text-xs text-pink-300 group-hover:text-white transition-colors"
+    style={{ fontFamily: "'DM Mono', monospace" }}
+  >
+    Instagram
+  </span>
+</a>
               </div>
             </div>
           </div>
 
-          <div className="contact-form-container bg-pink-50 rounded-2xl shadow-xl p-8 md:p-10">
-            <h3 className="form-title text-2xl font-bold text-gray-900 mb-8 text-center">Send Me a Message</h3>
+          {/* Right — Form */}
+          <div
+            className="bg-white rounded-3xl shadow-sm border border-pink-100 p-8 md:p-10 flex flex-col justify-center"
+          >
+            <h3
+              className="text-[#1a1a1a] mb-1"
+              style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                fontSize: "1.5rem",
+                fontWeight: 700,
+              }}
+            >
+              Send a message
+            </h3>
+            <p className="text-sm text-gray-400 mb-8">
+              Fill in the details below and I'll reply shortly.
+            </p>
 
-            <form className="contact-form" onSubmit={handleSubmit} noValidate>
-              <div className="form-row grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div className="form-group">
-                  <label htmlFor="firstName" className="text-sm text-gray-600 mb-1 block">First Name</label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="Your First Name"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border ${formErrors.firstName ? 'border-red-400 bg-red-50' : 'border-gray-300 focus:border-pink-500'} transition-colors focus:outline-none`}
-                  />
-                  {formErrors.firstName && <span className="error-text text-xs text-red-500 mt-1">{formErrors.firstName}</span>}
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="lastName" className="text-sm text-gray-600 mb-1 block">Last Name</label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Your Last Name"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border ${formErrors.lastName ? 'border-red-400 bg-red-50' : 'border-gray-300 focus:border-pink-500'} transition-colors focus:outline-none`}
-                  />
-                  {formErrors.lastName && <span className="error-text text-xs text-red-500 mt-1">{formErrors.lastName}</span>}
-                </div>
+            <form onSubmit={handleSubmit} noValidate className="space-y-5">
+              {/* Name Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {(["firstName", "lastName"] as const).map((field) => (
+                  <div key={field} className="group">
+                    <label
+                      htmlFor={field}
+                      className="block text-xs font-semibold tracking-wide text-gray-400 uppercase mb-1.5"
+                    >
+                      {field === "firstName" ? "First Name" : "Last Name"}
+                    </label>
+                    <input
+                      type="text"
+                      id={field}
+                      name={field}
+                      placeholder={field === "firstName" ? "Jane" : "Doe"}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      onFocus={() => setFocusedField(field)}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full px-4 py-3 rounded-xl text-sm border transition-all outline-none
+                        ${formErrors[field]
+                          ? "border-red-300 bg-red-50 text-red-900 placeholder:text-red-300"
+                          : focusedField === field
+                          ? "border-pink-400 bg-white ring-2 ring-pink-100"
+                          : "border-gray-200 bg-gray-50 hover:border-pink-200"
+                        }`}
+                    />
+                    {formErrors[field] && (
+                      <p className="mt-1 text-xs text-red-500 flex items-center gap-1">
+                        <span className="inline-block w-1 h-1 rounded-full bg-red-400" />
+                        {formErrors[field]}
+                      </p>
+                    )}
+                  </div>
+                ))}
               </div>
 
-              <div className="form-row grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div className="form-group">
-                  <label htmlFor="email" className="text-sm text-gray-600 mb-1 block">Email Address</label>
+              {/* Email + Phone Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold tracking-wide text-gray-400 uppercase mb-1.5">
+                    Email
+                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="you@example.com"
+                    placeholder="jane@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 rounded-lg border ${formErrors.email ? 'border-red-400 bg-red-50' : 'border-gray-300 focus:border-pink-500'} transition-colors focus:outline-none`}
+                    onFocus={() => setFocusedField("email")}
+                    onBlur={() => setFocusedField(null)}
+                    className={`w-full px-4 py-3 rounded-xl text-sm border transition-all outline-none
+                      ${formErrors.email
+                        ? "border-red-300 bg-red-50"
+                        : focusedField === "email"
+                        ? "border-pink-400 bg-white ring-2 ring-pink-100"
+                        : "border-gray-200 bg-gray-50 hover:border-pink-200"
+                      }`}
                   />
-                  {formErrors.email && <span className="error-text text-xs text-red-500 mt-1">{formErrors.email}</span>}
+                  {formErrors.email && (
+                    <p className="mt-1 text-xs text-red-500 flex items-center gap-1">
+                      <span className="inline-block w-1 h-1 rounded-full bg-red-400" />
+                      {formErrors.email}
+                    </p>
+                  )}
                 </div>
-
-                <div className="form-group">
-                  <label htmlFor="phone" className="text-sm text-gray-600 mb-1 block">Phone (Optional)</label>
+                <div>
+                  <label className="block text-xs font-semibold tracking-wide text-gray-400 uppercase mb-1.5">
+                    Phone{" "}
+                    <span className="normal-case font-normal text-gray-300">
+                      (optional)
+                    </span>
+                  </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    placeholder="+91 1234567890"
+                    placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-pink-500 transition-colors focus:outline-none"
+                    onFocus={() => setFocusedField("phone")}
+                    onBlur={() => setFocusedField(null)}
+                    className={`w-full px-4 py-3 rounded-xl text-sm border transition-all outline-none
+                      ${focusedField === "phone"
+                        ? "border-pink-400 bg-white ring-2 ring-pink-100"
+                        : "border-gray-200 bg-gray-50 hover:border-pink-200"
+                      }`}
                   />
                 </div>
               </div>
 
-              <div className="form-group mb-6">
-                <label htmlFor="message" className="text-sm text-gray-600 mb-1 block">Message</label>
+              {/* Message */}
+              <div>
+                <label className="block text-xs font-semibold tracking-wide text-gray-400 uppercase mb-1.5">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="Write your message here..."
+                  placeholder="Tell me about your project, idea, or just say hello…"
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 rounded-lg border ${formErrors.message ? 'border-red-400 bg-red-50' : 'border-gray-300 focus:border-pink-500'} transition-colors focus:outline-none resize-y`}
-                ></textarea>
-                {formErrors.message && <span className="error-text text-xs text-red-500 mt-1">{formErrors.message}</span>}
+                  onFocus={() => setFocusedField("message")}
+                  onBlur={() => setFocusedField(null)}
+                  className={`w-full px-4 py-3 rounded-xl text-sm border transition-all outline-none resize-y
+                    ${formErrors.message
+                      ? "border-red-300 bg-red-50"
+                      : focusedField === "message"
+                      ? "border-pink-400 bg-white ring-2 ring-pink-100"
+                      : "border-gray-200 bg-gray-50 hover:border-pink-200"
+                    }`}
+                />
+                {formErrors.message && (
+                  <p className="mt-1 text-xs text-red-500 flex items-center gap-1">
+                    <span className="inline-block w-1 h-1 rounded-full bg-red-400" />
+                    {formErrors.message}
+                  </p>
+                )}
               </div>
 
+              {/* Status Message */}
               {formStatus.submitted && (
                 <div
-                  className={`form-message p-4 rounded-lg mb-6 ${formStatus.success ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}
+                  className={`flex items-start gap-3 p-4 rounded-xl text-sm border
+                    ${formStatus.success
+                      ? "bg-green-50 border-green-200 text-green-700"
+                      : "bg-red-50 border-red-200 text-red-700"
+                    }`}
                 >
-                  {formStatus.message}
+                  <span className="text-base mt-0.5">
+                    {formStatus.success ? "✓" : "✕"}
+                  </span>
+                  <p>{formStatus.message}</p>
                 </div>
               )}
 
+              {/* Submit Button */}
               <button
                 type="submit"
-                className={`w-full py-3 px-6 rounded-lg bg-pink-600 hover:bg-pink-700 text-white font-medium transition-colors focus:outline-none ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
                 disabled={isLoading}
+                className={`w-full py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all
+                  ${isLoading
+                    ? "bg-pink-300 cursor-not-allowed text-white"
+                    : "bg-pink-600 hover:bg-pink-700 active:scale-[0.98] text-white shadow-md shadow-pink-200 hover:shadow-pink-300"
+                  }`}
+                style={{ fontFamily: "'DM Mono', monospace" }}
               >
                 {isLoading ? (
-                  <span className="flex justify-center items-center">
-                    <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  <span className="flex items-center justify-center gap-2">
+                    <svg
+                      className="animate-spin w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                      />
                     </svg>
-                    Sending...
+                    Sending…
                   </span>
-                ) : 'Send Message'}
+                ) : (
+                  <span className="flex items-center justify-center gap-2">
+                    Send Message
+                    <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                  </span>
+                )}
               </button>
+
+              <p className="text-center text-[11px] text-gray-300">
+                No spam. I'll only use your details to reply.
+              </p>
             </form>
           </div>
         </div>
@@ -1835,5 +2486,7 @@ const ContactSection = () => {
     </section>
   );
 };
+
+
 
 export default Index;
