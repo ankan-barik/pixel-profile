@@ -879,9 +879,9 @@ const quickDetails = [
         opacity: 0.5,
       }} />
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative' }}>
-
-       
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative' }}
+        className="about-container"
+      >
 
 {/* ── HERO HEADING ── */}
 <motion.div {...fadeUp(0.1)} style={{ textAlign: "center", marginBottom: "60px" }}>
@@ -922,35 +922,37 @@ const quickDetails = [
 </motion.div>
 
         {/* ── MAIN TWO-COLUMN LAYOUT ── */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '60px',
-          alignItems: 'start',
-          marginBottom: '64px',
-        }}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '60px',
+            alignItems: 'start',
+            marginBottom: '64px',
+          }}
           className="about-main-grid"
         >
 
           {/* ─── LEFT COLUMN — Bio + Stats + Details ─── */}
           <div>
-            <motion.p
-              {...fadeLeft(0.2)}
-              style={{
-                fontSize: '1.05rem',
-                color: '#4b5563',
-                lineHeight: 1.9,
-                marginBottom: '36px',
-                borderLeft: '3px solid #fb923c',
-                paddingLeft: '20px',
-              }}
-            >
-              I'm currently pursuing a{' '}
-              <strong style={{ color: '#0f0f0f', fontWeight: 700 }}>
-                B.Tech in Information Technology at Kalinga Institute of Industrial Technology (KIIT).
-              </strong>{' '}
-           Passionate about full-stack web development, I enjoy building modern, scalable web applications. I have experience working with technologies such as React.js, Node.js, Express.js, and MongoDB, and I focus on creating responsive, user-friendly digital experiences.
-            </motion.p>
+         <motion.p
+  {...fadeLeft(0.2)}
+  style={{
+    fontSize: '1.05rem',
+    color: '#4b5563',
+    lineHeight: 1.9,
+    marginBottom: '36px',
+    borderLeft: '3px solid #fb923c',
+    paddingLeft: '20px',
+    textAlign: 'justify'   // Added this line
+  }}
+>
+  I'm currently pursuing a{' '}
+  <strong style={{ color: '#0f0f0f', fontWeight: 700 }}>
+    B.Tech in Information Technology at Kalinga Institute of Industrial Technology (KIIT).
+  </strong>{' '}
+  Passionate about full-stack web development, I enjoy building modern, scalable web applications. I have experience working with technologies such as React.js, Node.js, Express.js, and MongoDB, and I focus on creating responsive, user-friendly digital experiences.
+</motion.p>
 
             {/* Stats row */}
             <motion.div
@@ -965,6 +967,7 @@ const quickDetails = [
                 overflow: 'hidden',
                 background: 'rgba(0,0,0,0.06)',
               }}
+              className="stats-grid"
             >
               {stats.map(({ number, label }, i) => (
                 <motion.div
@@ -1066,6 +1069,7 @@ const quickDetails = [
                 background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
                 borderBottom: '1px solid rgba(249,115,22,0.1)',
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                flexWrap: 'wrap', gap: '10px',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <div style={{
@@ -1085,6 +1089,7 @@ const quickDetails = [
                   background: 'rgba(249,115,22,0.12)',
                   color: '#c2410c', fontSize: '0.72rem', fontWeight: 700,
                   border: '1px solid rgba(249,115,22,0.2)',
+                  whiteSpace: 'nowrap',
                 }}>2022 – 2026</span>
               </div>
 
@@ -1096,7 +1101,7 @@ const quickDetails = [
                 <p style={{ fontSize: '0.85rem', fontWeight: 700, color: '#f97316', marginBottom: '4px' }}>
                   KIIT University
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '20px', flexWrap: 'wrap' }}>
                   <MapPin size={12} color="#9ca3af" />
                   <p style={{ fontSize: '0.78rem', color: '#9ca3af' }}>Bhubaneswar, Odisha &nbsp;·&nbsp; Final Year</p>
                 </div>
@@ -1139,6 +1144,7 @@ const quickDetails = [
                 background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
                 borderBottom: '1px solid rgba(59,130,246,0.1)',
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                flexWrap: 'wrap', gap: '10px',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <div style={{
@@ -1158,6 +1164,7 @@ const quickDetails = [
                   background: 'rgba(59,130,246,0.1)',
                   color: '#1d4ed8', fontSize: '0.72rem', fontWeight: 700,
                   border: '1px solid rgba(59,130,246,0.2)',
+                  whiteSpace: 'nowrap',
                 }}>May 2025 – Aug 2025</span>
               </div>
 
@@ -1214,12 +1221,95 @@ const quickDetails = [
 
       </div>
 
-      {/* Responsive styles */}
+      {/* ── Responsive styles ── */}
       <style>{`
+        /* ── Large desktop (1200px+): no change needed, base styles apply ── */
+
+        /* ── Tablet landscape (901px – 1199px) ── */
+        @media (max-width: 1199px) {
+          .about-container {
+            padding: 0 28px !important;
+          }
+          .about-main-grid {
+            gap: 40px !important;
+          }
+        }
+
+        /* ── Tablet portrait + small laptop (601px – 900px) ── */
         @media (max-width: 900px) {
+          .about-section {
+            padding: 80px 0 60px !important;
+          }
+          .about-container {
+            padding: 0 24px !important;
+          }
           .about-main-grid {
             grid-template-columns: 1fr !important;
-            gap: 40px !important;
+            gap: 36px !important;
+          }
+        }
+
+        /* ── Mobile (max 600px) ── */
+        @media (max-width: 600px) {
+          .about-section {
+            padding: 64px 0 48px !important;
+          }
+          .about-container {
+            padding: 0 16px !important;
+          }
+          .about-main-grid {
+            grid-template-columns: 1fr !important;
+            gap: 28px !important;
+            margin-bottom: 40px !important;
+          }
+
+          /* Heading */
+          .about-section h2 {
+            font-size: 1.55rem !important;
+          }
+
+          /* Bio text */
+          .about-section p {
+            font-size: 0.95rem !important;
+          }
+
+          /* Stats: 2×2 grid on very small screens */
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          /* Cards: tighter padding */
+          .about-section [style*="padding: '22px 28px 24px'"],
+          .about-section [style*="padding: '20px 28px 18px'"] {
+            padding: 16px 18px !important;
+          }
+
+          /* Quick-detail value: allow wrapping instead of ellipsis */
+          .about-section .detail-value {
+            white-space: normal !important;
+            word-break: break-word !important;
+          }
+
+          /* Download CV button: full width on mobile */
+          .primary-btn {
+            width: 100% !important;
+            justify-content: center !important;
+          }
+        }
+
+        /* ── Extra small (max 380px) ── */
+        @media (max-width: 380px) {
+          .about-container {
+            padding: 0 12px !important;
+          }
+          .about-section h2 {
+            font-size: 1.35rem !important;
+          }
+          .stats-grid > div {
+            padding: 14px 6px !important;
+          }
+          .stats-grid p:first-child {
+            font-size: 1.3rem !important;
           }
         }
       `}</style>
